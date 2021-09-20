@@ -1,0 +1,7 @@
+.App.wrapper {
+  color: var(--iq-body-text);
+  background: var(--iq-light);
+}
+.row {
+	display: flex;
+}

@@ -1,0 +1,8 @@
+.post {
+  margin-top: 15px;
+  padding: 15px;
+  background: var(--iq-white);
+  -webkit-box-shadow: 0px 0px 20px 0px rgb(44 101 144 / 10%);
+  box-shadow: 0px 0px 20px 0px rgb(44 101 144 / 10%);
+  border-radius: 5px;
+}
