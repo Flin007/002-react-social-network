@@ -10,3 +10,8 @@
 	-o-transition: all 0.3s ease-out 0s;
 	transition: all 0.3s ease-out 0s;
 }
+@media(max-width:1200px){
+	.pageContent{
+		max-width: calc(100% - 200px);
+	}
+}

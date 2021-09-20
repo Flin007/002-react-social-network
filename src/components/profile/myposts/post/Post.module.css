@@ -1,8 +1,83 @@
 .post {
+  position: relative;
   margin-top: 15px;
   padding: 15px;
   background: var(--iq-white);
   -webkit-box-shadow: 0px 0px 20px 0px rgb(44 101 144 / 10%);
   box-shadow: 0px 0px 20px 0px rgb(44 101 144 / 10%);
   border-radius: 5px;
+}
+.postHeader {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+.profileImg {
+  margin-right: 15px;
+}
+.profileImg img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.authorInfo .row {
+  align-items: center;
+}
+.userName {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 400;
+  margin-right: 5px;
+}
+.postAction {
+  font-weight: 300;
+  font-size: 0.9em;
+}
+.timeAgo {
+  font-size: 0.8em;
+}
+
+/* postSettings */
+.postSettings {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+.postSettings:hover {
+  color: var(--iq-primary-hover);
+}
+
+/* postFooter */
+.postFooter {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.iconCounter {
+  cursor: pointer;
+  margin-left: 20px;
+	color: var(--iq-secondary);
+	font-size: .8em;
+}
+.iconCounter:first-child {
+  margin-left: unset;
+}
+.iconCounter svg {
+	transition: color .3s ease-in-out;
+  margin-right: 3px;
+}
+.iconCounter:not(.active):hover svg{
+	color: var(--iq-primary);
+}
+.likesCount.active svg{
+	color: var(--red);
+}
+.commentsCount.active svg{
+	color: var(--iq-primary);
+}
+.sharesCount.active svg{
+	color: var(--success);
 }

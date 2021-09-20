@@ -1,3 +1,67 @@
-.item{
-	
+.createPost {
+  background: var(--iq-white);
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: 0px 0px 20px 0px rgb(44 101 144 / 10%);
+  box-shadow: 0px 0px 20px 0px rgb(44 101 144 / 10%);
+}
+.createPost .header {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--iq-border-light);
+}
+.createPost .header h4 {
+  font-size: 1.4em;
+}
+.createPost .body {
+  padding: 15px;
+}
+.createPost .body form {
+  position: relative;
+  width: 100%;
+}
+.createPost .body form textarea {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  font-size: 0.9em;
+  border-radius: 3px;
+  border-color: var(--iq-light);
+  resize: none;
+}
+.createPost .body form textarea:focus {
+  outline: unset;
+  border-color: var(--iq-primary);
+}
+.createPost .body form button {
+  text-align: center;
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+  width: 30px;
+  height: 25px;
+  border: unset;
+  outline: unset;
+  font-size: 0.7em;
+  padding: unset;
+  border-radius: 3px;
+  background-color: var(--iq-light-secondary);
+  color: var(--iq-primary);
+  cursor: pointer;
+	transition: .3s ease-in-out;
+}
+.createPost .body form button:hover{
+	background-color: var(--iq-light-primary);
+	color: var(--iq-primary);
+}
+.createPost .body .userImg {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+.createPost .body .userImg img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }

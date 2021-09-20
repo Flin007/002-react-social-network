@@ -1,6 +1,6 @@
 import s from './sidebar.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faNewspaper, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faNewspaper, faUsers } from '@fortawesome/free-solid-svg-icons';
 function Sidebar(){
 	return(
 		<div className={s.sidebar}>
