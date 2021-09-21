@@ -8,7 +8,7 @@ function Header() {
 	return(
 		<header className={s.site_header}>
 			<div className="row">
-				<a className={s.site_logo} href="">
+				<a href="/feed" className={s.site_logo}>
 					<img src={logo} alt="Social Network" />
 					<span>SocialV</span>
 				</a>

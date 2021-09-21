@@ -4,22 +4,46 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0px;
-  line-height: 1.5;
-  color: var(--iq-title-text);
-  font-weight: 400;
+    margin: 0px;
+    line-height: 1.5;
+    color: var(--iq-title-text);
+    font-weight: 400;
 }
+
 hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-	border-color: var(--iq-border-light);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-color: var(--iq-border-light);
 }
+
 .App.wrapper {
-  color: var(--iq-body-text);
-  background: var(--iq-light);
+    color: var(--iq-body-text);
+    background: var(--iq-light);
 }
+
 .row {
-  display: flex;
+    display: flex;
+}
+
+
+/* PageContent styles*/
+.pageContent {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 90px 15px 0;
+    min-height: 100vh;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+
+@media (max-width: 1200px) {
+    .pageContent {
+        max-width: calc(100% - 200px);
+    }
 }
