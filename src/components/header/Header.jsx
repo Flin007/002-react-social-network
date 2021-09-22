@@ -3,6 +3,7 @@ import profile_img from './../../images/profile.jpg';
 import s from './Header.module.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from '@fortawesome/free-solid-svg-icons'
+import SearchInput from "../repeaters/searchinput/SearchInput";
 
 function Header() {
 	return(
@@ -14,10 +15,8 @@ function Header() {
 				</a>
 				<span className={s.toggle_menu}><FontAwesomeIcon icon={faBars} /></span>
 			</div>
-			<div className="row">
-				<form action="" className={s.searchbox}>
-					<input type="text" placeholder="Введите для поиска..." />
-				</form>
+			<div className="row" style={{width: '300px'}}>
+				<SearchInput style="blue" iconpos="right" placeholder="Введите для поиска..."/>
 			</div>
 			<div className="row">
 				<div className={s.profile_container}>

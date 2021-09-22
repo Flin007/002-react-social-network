@@ -1,0 +1,209 @@
+.dialogsContainer {
+    display: flex;
+    background: var(--iq-white);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 20px 0px rgb(44 101 144 / 10%);
+    box-shadow: 0px 0px 20px 0px rgb(44 101 144/ 10%);
+}
+
+.openDialog {
+    flex-basis: calc(100% - 250px);
+    background-size: cover;
+    background-position: center;
+}
+.openDialog .dialogContent{
+    position: relative;
+    height: calc(100vh - 170px);
+    text-align: center;
+    padding: 1.4rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.openDialog .dialogContent::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.openDialog .dialogContent::-webkit-scrollbar-thumb {
+    background: var(--iq-primary);
+    border-radius: 30px;
+}
+
+.openDialog .dialogContent::-webkit-scrollbar-thumb:hover {
+    background: var(--iq-title-text);
+}
+
+.openDialog .dialogContent::-webkit-scrollbar-track {
+    background: var(--iq-light-primary);
+    border-radius: 0px;
+    box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+}
+
+
+
+
+
+
+
+
+.leftColumn {
+    padding: 0 7.5px;
+    flex-basis: 250px;
+    max-width: 250px;
+}
+
+.leftColumn .myProfile {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.leftColumn .myProfile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.leftColumn .myProfile .chatCaption {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.leftColumn .myProfile .chatCaption::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+.leftColumn .myProfile .chatCaption::-webkit-scrollbar-thumb {
+    background: #DBDBDB;
+    border-radius: 30px;
+}
+
+.leftColumn .myProfile .chatCaption::-webkit-scrollbar-thumb:hover {
+    background: #B3B3B3;
+}
+
+.leftColumn .myProfile .chatCaption::-webkit-scrollbar-track {
+    background: #F0F0F0;
+    border-radius: 0px;
+    box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+}
+
+.leftColumn .myProfile .chatCaption h5 {
+    margin: unset;
+    padding: unset;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+.leftColumn .myProfile .chatCaption p {
+    margin: unset;
+    padding: unset;
+    font-weight: 300;
+    font-size: .9em;
+}
+
+
+.searchBlock {
+    padding: 15px 0 0 15px;
+}
+
+
+.dialogsList {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 325px);
+    margin-bottom: 15px;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+.dialogsList::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.dialogsList::-webkit-scrollbar-thumb {
+    background: var(--iq-primary);
+    border-radius: 30px;
+}
+
+.dialogsList::-webkit-scrollbar-thumb:hover {
+    background: var(--iq-title-text);
+}
+
+.dialogsList::-webkit-scrollbar-track {
+    background: var(--iq-light-primary);
+    border-radius: 0px;
+    box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+}
+
+.dialogsList h4 {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 0px;
+    line-height: 1.5;
+    color: var(--iq-title-text);
+    border-bottom: 1px solid var(--iq-border-light);
+    padding-bottom: 10px;
+}
+
+.dialogsList .dialog {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--iq-border-light);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.dialogsList .dialog:hover{
+    background-color: var(--iq-light-primary);
+}
+.dialogsList .dialog.active{
+    border-color: transparent;
+    background-color: var(--iq-light-primary);
+}
+
+.dialogsList .dialog:last-child {
+    border-bottom: unset;
+}
+
+.dialogsList .dialog .imageContainer {
+    position: relative;
+}
+
+.dialogsList .dialog .imageContainer img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.dialogsList .dialog .imageContainer .status {
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    top: -2px;
+    right: -2px;
+    position: absolute;
+    background-color: var(--iq-dark-body-text);
+}
+
+.online {
+    background-color: var(--primary);
+}
+
+.dialogsList .dialog h5 {
+    font-size: 1em;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
