@@ -8,7 +8,6 @@ import Friends from "./components/friends/Friends";
 
 
 function App(props) {
-
     return (
         <BrowserRouter>
             <div className="App wrapper">

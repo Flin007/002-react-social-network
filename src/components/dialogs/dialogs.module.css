@@ -17,7 +17,8 @@
 }
 .openDialog .dialogContent{
     position: relative;
-    height: calc(100vh - 170px);
+    background-size: cover;
+    height: calc(100vh - 320px);
     text-align: center;
     padding: 1.4rem;
     overflow-y: auto;
@@ -153,3 +154,57 @@
     padding-bottom: 10px;
 }
 
+
+
+
+
+.openDialogHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+.openDialogHeader .userData{
+    display: flex;
+    align-items: center;
+}
+.openDialogHeader .userData img{
+    margin-right: 15px;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+.openDialogHeader .userData h5{
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+
+.openDialogFooter{
+    padding: 15px;
+    display: flex;
+}
+.openDialogFooter textarea{
+    width: 100%;
+    margin-right: 15px;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid var(--iq-border-light);
+    padding: 10px;
+    font-size: 14px;
+}
+.openDialogFooter textarea:focus{
+    outline: unset;
+    border-color: var(--iq-primary);
+}
+.openDialogFooter .sendMessage{
+    background-color: var(--iq-primary);
+    cursor: pointer;
+    border: unset;
+    font-size: 14px;
+    color: var(--white);
+    padding: 12px;
+}
+.openDialogFooter .sendMessage:hover{
+    background-color: var(--iq-primary-hover);
+}

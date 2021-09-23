@@ -1,10 +1,16 @@
+import renderEntireTree from "../render";
 let state ={
     profile:{
         posts:[
             {content:'Привет мир1', isLike:'true', likeCount:'5', commentCount:'3', sharesCount:'1'},
             {content:'Привет мир2', isLike:'false', likeCount:'10', commentCount:'0', sharesCount:'5'},
             {content:'Привет мир3', isLike:'true', likeCount:'4', commentCount:'2', sharesCount:'3'}
-        ]
+        ],
+        addPost: (content,isLike,likeCount,commentCount,shareCount) =>{
+            let obj = {content:content, isLike:isLike, likeCount:likeCount, commentCount:commentCount, sharesCount:shareCount};
+            state.profile.posts.push(obj);
+            renderEntireTree(state);
+        }
     },
     dialogs:{
         userDialogs:[

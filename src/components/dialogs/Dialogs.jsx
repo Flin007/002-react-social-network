@@ -1,3 +1,4 @@
+import React from 'react';
 import s from './dialogs.module.css';
 import profile_img from './../../images/profile.jpg';
 import chatbg from './../../images/chatbg.jpg';
@@ -6,6 +7,10 @@ import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 
 
+let messageText = React.createRef();
+let sendMessage = () =>{
+    alert(messageText.current.value);
+}
 
 const Dialogs = (props) => {
     let dialogs  = props.appState.userDialogs.map( el => <DialogItem name={el.name} id={el.id}/> );
@@ -29,9 +34,19 @@ const Dialogs = (props) => {
                         {dialogs}
                     </div>
                 </div>
-                <div style={{backgroundImage: `url(${chatbg})`}} className={s.openDialog}>
-                    <div className={s.dialogContent}>
+                <div className={s.openDialog}>
+                    <div className={s.openDialogHeader}>
+                        <div className={s.userData}>
+                            <img src={profile_img} alt=""/>
+                            <h5>Имя пользователя</h5>
+                        </div>
+                    </div>
+                    <div style={{backgroundImage: `url(${chatbg})`}} className={s.dialogContent}>
                         {messages}
+                    </div>
+                    <div className={s.openDialogFooter}>
+                        <textarea ref={messageText} name="" id="" cols="30" rows="1" placeholder='Введите сообщение...'></textarea>
+                        <button onClick={sendMessage} className={s.sendMessage}>Отправить</button>
                     </div>
                 </div>
             </div>

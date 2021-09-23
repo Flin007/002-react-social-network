@@ -1,3 +1,4 @@
+import React from 'react';
 import profile_img from "./../../../images/profile.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,12 +11,13 @@ import Post from "./post/Post";
 
 
 
-
-
-
 function MyPosts(props) {
 
-  let posts = props.posts.map(p => <Post content={p.content} isLike={p.isLike} likeCount={p.likeCount} commentCount={p.commentCount} sharesCount={p.sharesCount} />);
+  let posts = props.posts.posts.map(p => <Post content={p.content} isLike={p.isLike} likeCount={p.likeCount} commentCount={p.commentCount} sharesCount={p.sharesCount} />);
+  let newPostElement = React.createRef();
+  let createPost = () => {
+    props.posts.addPost(newPostElement.current.value, false, 0, 0, 0);
+  }
   return (
     <div className={s.pageContent}>
       <div className={s.createPost}>
@@ -28,16 +30,16 @@ function MyPosts(props) {
               <img src={profile_img} alt="" />
             </div>
             <form action="">
-              <textarea
+              <textarea ref={newPostElement}
                 name=""
                 id=""
                 cols="30"
-                rows="4"
+                rows="2"
                 placeholder="Напишите что-нибудь"
               ></textarea>
-              <button type="submit">
+              <span onClick={createPost}>
                 <FontAwesomeIcon icon={faPaperPlane} />
-              </button>
+              </span>
             </form>
           </div>
           <hr />
