@@ -8,7 +8,14 @@ import {
 import s from "./MyPosts.module.css";
 import Post from "./post/Post";
 
-function MyPosts() {
+
+
+
+
+
+function MyPosts(props) {
+
+  let posts = props.posts.map(p => <Post content={p.content} isLike={p.isLike} likeCount={p.likeCount} commentCount={p.commentCount} sharesCount={p.sharesCount} />);
   return (
     <div className={s.pageContent}>
       <div className={s.createPost}>
@@ -36,8 +43,7 @@ function MyPosts() {
           <hr />
         </div>
       </div>
-      <Post content="Привет мир 1" isLike="true" likeCount="5" commentCount="3" sharesCount="1" />
-      <Post content="Привет мир 2" isLike="false" likeCount="11" commentCount="1" sharesCount="0" />
+      {posts}
     </div>
   );
 }

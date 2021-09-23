@@ -1,0 +1,53 @@
+.dialog {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--iq-border-light);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.dialog:hover{
+    background-color: var(--iq-light-primary);
+}
+.dialog.active{
+    border-color: transparent;
+    background-color: var(--iq-light-primary);
+}
+
+.dialog:last-child {
+    border-bottom: unset;
+}
+
+.dialog .imageContainer {
+    position: relative;
+}
+
+.dialog .imageContainer img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.dialog .imageContainer .status {
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    top: -2px;
+    right: -2px;
+    position: absolute;
+    background-color: var(--iq-dark-body-text);
+}
+
+.online {
+    background-color: var(--primary);
+}
+
+.dialog h5 {
+    font-size: 1em;
+    margin-left: 10px;
+    font-weight: 400;
+}

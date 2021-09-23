@@ -7,16 +7,22 @@ import Feed from "./components/feed/Feed";
 import Friends from "./components/friends/Friends";
 
 
-function App() {
+function App(props) {
+
     return (
         <BrowserRouter>
             <div className="App wrapper">
                 <Header/>
                 <Sidebar/>
                 <div className="page">
-                    <Route path="/profile" component={Profile}/>
+                    <Route
+                        path="/profile"
+                        render={() => <Profile appState={props.appState.profile}/>}/>
                     <Route path="/feed" component={Feed}/>
-                    <Route path="/dialogs" component={Dialogs}/>
+                    <Route
+                        path="/dialogs"
+                        render={() => <Dialogs appState={props.appState.dialogs} />}
+                    />
                     <Route path="/friends" component={Friends}/>
                 </div>
             </div>

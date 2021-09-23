@@ -6,10 +6,12 @@ import './fonts.css';
 import './variables.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import appState from "./redux/state";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App appState={appState}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

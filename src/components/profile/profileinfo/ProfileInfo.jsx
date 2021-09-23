@@ -24,7 +24,18 @@ const ProfileInfo = (props) => {
                     <li><a href=""><img src={SocialIcons[5]} alt=""/></a></li>
                 </ul>
                 <div className={s.profileStats}>
-
+                    <div>
+                        <b>Постов</b>
+                        <p>690</p>
+                    </div>
+                    <div>
+                        <b>Подписчиков</b>
+                        <p>1250</p>
+                    </div>
+                    <div>
+                        <b>Подписок</b>
+                        <p>50</p>
+                    </div>
                 </div>
             </div>
         </div>

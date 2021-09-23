@@ -42,6 +42,8 @@
 
 
 .profileInfo{
+    display: flex;
+    justify-content: space-between;
     position: relative;
     padding: 15px;
 }
@@ -60,4 +62,26 @@
 }
 .profileInfo .socialLinks li a img{
     border-radius: 5px;
+}
+
+.profileInfo .profileStats{
+    display: flex;
+}
+.profileInfo .profileStats div{
+    margin-right: 15px;
+}
+.profileInfo .profileStats div:last-child{
+    margin-right: unset;
+}
+.profileInfo .profileStats div b{
+    font-weight: 500;
+    font-size: 14px;
+}
+.profileInfo .profileStats div p{
+    text-align: center;
+    margin: unset;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--iq-body-text);
+    font-weight: 300;
 }

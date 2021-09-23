@@ -1,47 +1,15 @@
 import s from './dialogs.module.css';
 import profile_img from './../../images/profile.jpg';
-import dialog1 from './../../images/dialogs-1.jpg';
 import chatbg from './../../images/chatbg.jpg';
 import SearchInput from "../repeaters/searchinput/SearchInput";
-import {NavLink} from "react-router-dom";
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
-const DialogItem = (props) => {
-    return (
-        <NavLink to={`/dialogs/${props.id}`} activeClassName={s.active} className={s.dialog}>
-            <div className={s.imageContainer}>
-                <img src={dialog1} alt=""/>
-                <span className={s.status}> </span>
-            </div>
-            <h5>Paul Molive</h5>
-        </NavLink>
-    );
-}
 
-const Message = (props) => {
-    return (
-        <div className={s.dialogContent}>
-            <p>h1</p>
-            <p>h2</p>
-            <p>h1</p>
-        </div>
-
-    );
-}
-
-const dialogItemsList = [
-    {id:1,name:'Владимир Фетисов'},
-    {id:2,name:'Максим Рамазанов'},
-    {id:3,name:'Ирина Фролова'},
-    {id:4,name:'Иван Свирин'},
-    {id:5,name:'Артём Тарасов'},
-    {id:6,name:'Кирилл Кудрин'},
-    {id:7,name:'Артур Пирожков'}
-];
-dialogItemsList.map((i)=>{
-    console.log(i);
-});
 
 const Dialogs = (props) => {
+    let dialogs  = props.appState.userDialogs.map( el => <DialogItem name={el.name} id={el.id}/> );
+    let messages = props.appState.messages.map( m => <Message text={m.text}/>);
     return (
         <div className="pageContent">
             <div className={s.dialogsContainer}>
@@ -58,14 +26,13 @@ const Dialogs = (props) => {
                     </div>
                     <div className={s.dialogsList}>
                         <h4>Мои диалоги</h4>
-
-                        <DialogItem name="Владимир Фетисв" id="1"/>
-                        <DialogItem name="Елена Свирина" id="2"/>
-                        <DialogItem name="Иван Свирин" id="3"/>
+                        {dialogs}
                     </div>
                 </div>
                 <div style={{backgroundImage: `url(${chatbg})`}} className={s.openDialog}>
-                    <Message />
+                    <div className={s.dialogContent}>
+                        {messages}
+                    </div>
                 </div>
             </div>
         </div>
