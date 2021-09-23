@@ -12,11 +12,15 @@ import Post from "./post/Post";
 
 
 function MyPosts(props) {
+  let posts = props.appState.posts.map(p => <Post content={p.content} isLike={p.isLike} likeCount={p.likeCount} commentCount={p.commentCount} sharesCount={p.sharesCount} />);
 
-  let posts = props.posts.posts.map(p => <Post content={p.content} isLike={p.isLike} likeCount={p.likeCount} commentCount={p.commentCount} sharesCount={p.sharesCount} />);
+
   let newPostElement = React.createRef();
   let createPost = () => {
-    props.posts.addPost(newPostElement.current.value, false, 0, 0, 0);
+    props.appState.createPost(newPostElement.current.value, false, 0, 0, 0);
+  }
+  let newPostTextareaChange = () => {
+    props.appState.newPostTextareaChange(newPostElement.current.value);
   }
   return (
     <div className={s.pageContent}>
@@ -30,13 +34,16 @@ function MyPosts(props) {
               <img src={profile_img} alt="" />
             </div>
             <form action="">
-              <textarea ref={newPostElement}
+              <textarea
+                ref={newPostElement}
+                value={props.appState.newPostText}
+                onChange={newPostTextareaChange}
                 name=""
                 id=""
                 cols="30"
                 rows="2"
                 placeholder="Напишите что-нибудь"
-              ></textarea>
+              />
               <span onClick={createPost}>
                 <FontAwesomeIcon icon={faPaperPlane} />
               </span>
