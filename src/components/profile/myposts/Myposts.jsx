@@ -8,19 +8,20 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import s from "./MyPosts.module.css";
 import Post from "./post/Post";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
 
 
 
 function MyPosts(props) {
-  let posts = props.appState.posts.map(p => <Post content={p.content} isLike={p.isLike} likeCount={p.likeCount} commentCount={p.commentCount} sharesCount={p.sharesCount} />);
+  let posts = props.state.posts.map(p => <Post content={p.content} isLike={p.isLike} likeCount={p.likeCount} commentCount={p.commentCount} sharesCount={p.sharesCount} />);
 
 
   let newPostElement = React.createRef();
-  let createPost = () => {
-    props.appState.createPost(newPostElement.current.value, false, 0, 0, 0);
+  let addPost = () => {
+    props.dispatch(addPostActionCreator());
   }
-  let newPostTextareaChange = () => {
-    props.appState.newPostTextareaChange(newPostElement.current.value);
+  let updateNewPostText = () => {
+    props.dispatch(updateNewPostTextActionCreator(newPostElement.current.value));
   }
   return (
     <div className={s.pageContent}>
@@ -36,15 +37,15 @@ function MyPosts(props) {
             <form action="">
               <textarea
                 ref={newPostElement}
-                value={props.appState.newPostText}
-                onChange={newPostTextareaChange}
+                value={props.state.newPostText}
+                onChange={updateNewPostText}
                 name=""
                 id=""
                 cols="30"
                 rows="2"
                 placeholder="Напишите что-нибудь"
               />
-              <span onClick={createPost}>
+              <span onClick={addPost}>
                 <FontAwesomeIcon icon={faPaperPlane} />
               </span>
             </form>

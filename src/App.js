@@ -1,3 +1,4 @@
+import React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/sidebar";
@@ -8,7 +9,6 @@ import Friends from "./components/friends/Friends";
 
 
 function App(props) {
-
     return (
         <BrowserRouter>
             <div className="App wrapper">
@@ -17,11 +17,16 @@ function App(props) {
                 <div className="page">
                     <Route
                         path="/profile"
-                        render={() => <Profile appState={props.appState.profile}/>}/>
+                        render={() =>
+                            <Profile
+                                state={props.state.profile}
+                                dispatch={props.dispatch}
+                            />}
+                    />
                     <Route path="/feed" component={Feed}/>
                     <Route
                         path="/dialogs"
-                        render={() => <Dialogs appState={props.appState.dialogs} />}
+                        render={() => <Dialogs state={props.state.dialogs} />}
                     />
                     <Route path="/friends" component={Friends}/>
                 </div>
