@@ -26,7 +26,11 @@ function App(props) {
                     <Route path="/feed" component={Feed}/>
                     <Route
                         path="/dialogs"
-                        render={() => <Dialogs state={props.state.dialogs} />}
+                        render={() =>
+                            <Dialogs
+                                state={props.state.dialogs}
+                                dispatch={props.dispatch}
+                            />}
                     />
                     <Route path="/friends" component={Friends}/>
                 </div>

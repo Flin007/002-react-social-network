@@ -3,6 +3,43 @@
   <component name="TerminalProjectOptionsProvider">
     <envs>
       <env key="PATH" value="C:\Program Files\Git\cmd" />
+      <env key="APPDATA" value="C:\Users\Acer\AppData\Roaming" />
+      <env key="COMPUTERNAME" value="LAPTOP-JD61II7A" />
+      <env key="ComSpec" value="C:\WINDOWS\system32\cmd.exe" />
+      <env key="CommonProgramFiles" value="C:\Program Files\Common Files" />
+      <env key="CommonProgramFiles(x86)" value="C:\Program Files (x86)\Common Files" />
+      <env key="CommonProgramW6432" value="C:\Program Files\Common Files" />
+      <env key="DriverData" value="C:\Windows\System32\Drivers\DriverData" />
+      <env key="HOMEDRIVE" value="$PROJECT_DIR$/../../../../.." />
+      <env key="HOMEPATH" value="\Users\Acer" />
+      <env key="IDEA_INITIAL_DIRECTORY" value="C:\Program Files\JetBrains\WebStorm 2020.1\bin" />
+      <env key="LOCALAPPDATA" value="C:\Users\Acer\AppData\Local" />
+      <env key="LOGONSERVER" value="\\LAPTOP-JD61II7A" />
+      <env key="NUMBER_OF_PROCESSORS" value="4" />
+      <env key="OS" value="Windows_NT" />
+      <env key="OneDrive" value="C:\Users\Acer\OneDrive" />
+      <env key="PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC" />
+      <env key="PROCESSOR_ARCHITECTURE" value="AMD64" />
+      <env key="PROCESSOR_IDENTIFIER" value="Intel64 Family 6 Model 122 Stepping 1, GenuineIntel" />
+      <env key="PROCESSOR_LEVEL" value="6" />
+      <env key="PROCESSOR_REVISION" value="7a01" />
+      <env key="PSModulePath" value="C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules" />
+      <env key="PUBLIC" value="C:\Users\Public" />
+      <env key="Path" value="C:\Program Files (x86)\Intel\TXE Components\iCLS\;C:\Program Files\Intel\TXE Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\TXE Components\DAL\;C:\Program Files (x86)\Intel\TXE Components\DAL\;C:\Program Files\Intel\TXE Components\IPT\;C:\Program Files (x86)\Intel\TXE Components\IPT\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Acer\AppData\Local\Microsoft\WindowsApps;C:\Users\Acer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Acer\AppData\Roaming\npm;C:\Users\Acer\AppData\Local\GitHubDesktop\bin" />
+      <env key="ProgramData" value="C:\ProgramData" />
+      <env key="ProgramFiles" value="C:\Program Files" />
+      <env key="ProgramFiles(x86)" value="C:\Program Files (x86)" />
+      <env key="ProgramW6432" value="C:\Program Files" />
+      <env key="SESSIONNAME" value="Console" />
+      <env key="SystemDrive" value="$PROJECT_DIR$/../../../../.." />
+      <env key="SystemRoot" value="C:\WINDOWS" />
+      <env key="TEMP" value="C:\Users\Acer\AppData\Local\Temp" />
+      <env key="TMP" value="C:\Users\Acer\AppData\Local\Temp" />
+      <env key="USERDOMAIN" value="LAPTOP-JD61II7A" />
+      <env key="USERDOMAIN_ROAMINGPROFILE" value="LAPTOP-JD61II7A" />
+      <env key="USERNAME" value="Acer" />
+      <env key="USERPROFILE" value="C:\Users\Acer" />
+      <env key="windir" value="C:\WINDOWS" />
     </envs>
   </component>
 </project>

@@ -1,6 +1,6 @@
 const ADD_POST= 'ADD-POST';
 const UPDATE_NEW_POST_TEXT= 'UPDATE-NEW-POST-TEXT';
-
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 //Check changes from another computer
 
@@ -24,7 +24,8 @@ let store = {
                 {id: 6, name: 'Кирилл Кудрин'},
                 {id: 7, name: 'Артур Пирожков'}
             ],
-            messages: [{text: 'Привет'}, {text: 'Как дела?'}, {text: 'Чем занимаешься?'}]
+            messages: [{text: 'Привет'}, {text: 'Как дела?'}, {text: 'Чем занимаешься?'}],
+            newMessageText: ''
         }
     },
     _getState() {
@@ -36,23 +37,6 @@ let store = {
     },
     subscribe(observer) {
         this._callSubscriber = observer; //Наблюдатель
-    },
-
-    createPost(id, content, isLike, likeCount = 4, commentCount, shareCount = 0) {
-        let post ={
-            content: this._state.profile.newPostText,
-            isLike: isLike,
-            likeCount: likeCount,
-            commentCount: commentCount,
-            sharesCount: shareCount
-        }
-        this._state.profile.posts.push(post);
-        this._state.profile.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    createPostTextareaChange(string){
-        this._state.profile.newPostText = string;
-        this._callSubscriber(this._state);
     },
     dispatch(action,data){ //Принимает объект со свойством type, например 'ADD-POST' в string формате
         if (action.type === ADD_POST){
@@ -66,12 +50,13 @@ let store = {
             this._state.profile.posts.push(post);
             this._state.profile.newPostText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT){
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profile.newPostText = action.text;
             this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT){
+            this._state.dialogs.newMessageText = action.text;
         }
     }
-
 }
 
 export const addPostActionCreator = () => {
@@ -79,6 +64,9 @@ export const addPostActionCreator = () => {
 }
 export const updateNewPostTextActionCreator = (text) => {
     return {type:UPDATE_NEW_POST_TEXT, text}
+}
+export const updateNewMessageTextActionCreator =(text) => {
+    return { type:UPDATE_NEW_MESSAGE_TEXT, text }
 }
 
 export default store;

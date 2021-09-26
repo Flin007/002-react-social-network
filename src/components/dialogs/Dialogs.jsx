@@ -5,16 +5,23 @@ import chatbg from './../../images/chatbg.jpg';
 import SearchInput from "../repeaters/searchinput/SearchInput";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-
-
-let messageText = React.createRef();
-let sendMessage = () =>{
-    alert(messageText.current.value);
-}
+import {updateNewMessageTextActionCreator} from "../../redux/state";
 
 const Dialogs = (props) => {
-    let dialogs  = props.appState.userDialogs.map( el => <DialogItem name={el.name} id={el.id}/> );
-    let messages = props.appState.messages.map( m => <Message text={m.text}/>);
+
+
+    //
+    let messageText = React.createRef();
+    let sendMessage = () =>{
+
+    }
+    let newMessageTextChange = () => {
+        props.dispatch(updateNewMessageTextActionCreator(messageText.current.value));
+    }
+
+    //
+    let dialogs  = props.state.userDialogs.map( el => <DialogItem name={el.name} id={el.id}/> );
+    let messages = props.state.messages.map( m => <Message text={m.text}/>);
     return (
         <div className="pageContent">
             <div className={s.dialogsContainer}>
@@ -45,7 +52,14 @@ const Dialogs = (props) => {
                         {messages}
                     </div>
                     <div className={s.openDialogFooter}>
-                        <textarea ref={messageText} name="" id="" cols="30" rows="1" placeholder='Введите сообщение...'></textarea>
+                        <textarea
+                            ref={messageText}
+                            onChange={newMessageTextChange}
+                            name=""
+                            id=""
+                            cols="30"
+                            rows="1"
+                            placeholder='Введите сообщение...'/>
                         <button onClick={sendMessage} className={s.sendMessage}>Отправить</button>
                     </div>
                 </div>
