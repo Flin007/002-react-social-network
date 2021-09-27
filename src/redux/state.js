@@ -1,9 +1,5 @@
-const ADD_POST= 'ADD-POST';
-const UPDATE_NEW_POST_TEXT= 'UPDATE-NEW-POST-TEXT';
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
-
-//Check changes from another computer
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
 
 let store = {
     _state: {
@@ -39,46 +35,14 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer; //Наблюдатель
     },
-    dispatch(action){ //Принимает объект со свойством type, например 'ADD-POST' в string формате
-        if (action.type === ADD_POST){
-            let post ={
-                content: this._state.profile.newPostText,
-                isLike: action.isLike ? action.isLike : false,
-                likeCount: action.likeCount ? action.likeCount : 0,
-                commentCount: action.commentCount ? action.commentCount : 0,
-                sharesCount: action.shareCount ? action.shareCount : 0
-            }
-            this._state.profile.posts.push(post);
-            this._state.profile.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profile.newPostText = action.text;
-            this._callSubscriber(this._state);
-        }else if(action.type === SEND_MESSAGE){
-            let message = {
-                text:this._state.dialogs.newMessageText
-            }
-            this._state.dialogs.messages.push(message);
-            this._state.dialogs.newMessageText = '';
-            this._callSubscriber(this._state);
-        }else if (action.type === UPDATE_MESSAGE_TEXT){
-            this._state.dialogs.newMessageText = action.text;
-            this._callSubscriber(this._state);
-        }
-    }
-}
+    dispatch(action){
+        //Получаем новый state через reducer, который принимает актуальный state и action
+        this._state.profile = profileReducer(this._state.profile, action);
+        this._state.dialogs = dialogsReducer(this._state.dialogs, action);
 
-export const addPostActionCreator = () => {
-    return {type:ADD_POST}
-}
-export const updateNewPostTextActionCreator = (text) => {
-    return {type:UPDATE_NEW_POST_TEXT, text};
-}
-export const updateNewMessageTextActionCreator =(text) => {
-    return { type:UPDATE_MESSAGE_TEXT, text };
-}
-export const sendMessageActionCreator = () => {
-    return {type:SEND_MESSAGE};
+        //Перерисовываем
+        this._callSubscriber(this._state);
+    }
 }
 
 export default store;
