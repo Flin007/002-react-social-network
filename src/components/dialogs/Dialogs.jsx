@@ -5,15 +5,14 @@ import chatbg from './../../images/chatbg.jpg';
 import SearchInput from "../repeaters/searchinput/SearchInput";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {updateNewMessageTextActionCreator} from "../../redux/state";
+import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/state";
 
 const Dialogs = (props) => {
-
 
     //
     let messageText = React.createRef();
     let sendMessage = () =>{
-
+        props.dispatch(sendMessageActionCreator());
     }
     let newMessageTextChange = () => {
         props.dispatch(updateNewMessageTextActionCreator(messageText.current.value));
@@ -54,6 +53,7 @@ const Dialogs = (props) => {
                     <div className={s.openDialogFooter}>
                         <textarea
                             ref={messageText}
+                            value={props.state.newMessageText}
                             onChange={newMessageTextChange}
                             name=""
                             id=""
