@@ -8,20 +8,20 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import s from "./MyPosts.module.css";
 import Post from "./post/Post";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
 
 
 
 function MyPosts(props) {
-  let posts = props.state.posts.map(p => <Post content={p.content} isLike={p.isLike} likeCount={p.likeCount} commentCount={p.commentCount} sharesCount={p.sharesCount} />);
-
-
+  let posts = props.posts.map(p => <Post content={p.content} isLike={p.isLike} likeCount={p.likeCount} commentCount={p.commentCount} sharesCount={p.sharesCount} />);
   let newPostElement = React.createRef();
+
+  //Функция добавления поста из MyPostsContainer
   let addPost = () => {
-    props.dispatch(addPostActionCreator());
+    props.addPost();
   }
+  //Функция Обновления текста добавления поста из MyPostsContainer
   let updateNewPostText = () => {
-    props.dispatch(updateNewPostTextActionCreator(newPostElement.current.value));
+    props.updateNewPostText(newPostElement.current.value);
   }
   return (
     <div className={s.pageContent}>
@@ -37,7 +37,7 @@ function MyPosts(props) {
             <form action="">
               <textarea
                 ref={newPostElement}
-                value={props.state.newPostText}
+                value={props.currentNewPostText}
                 onChange={updateNewPostText}
                 name=""
                 id=""

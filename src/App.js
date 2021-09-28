@@ -19,10 +19,8 @@ function App(props) {
                     <Route
                         path="/profile"
                         render={() =>
-                            <Profile
-                                state={props.state.profile}
-                                dispatch={props.dispatch}
-                            />}
+                            <Profile store={props.store}/>
+                        }
                     />
                     <Route path="/feed" component={Feed}/>
                     <Route
