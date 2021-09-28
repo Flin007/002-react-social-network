@@ -1,7 +1,17 @@
 const ADD_POST= 'ADD-POST';
 const UPDATE_NEW_POST_TEXT= 'UPDATE-NEW-POST-TEXT';
 
-const profileReducer = (state, action) => {
+//Так называем инициализирующий стейт, т.к. при первом проходе REDUX вызывает наш Reducer, но еще не имеет никакого State, выдаст ошибку
+let initialState = {
+    posts: [
+        {id:1, content: 'Привет мир1', isLike: true, likeCount: 5, commentCount: 3, sharesCount: 1},
+        {id:2, content: 'Привет мир2', isLike: false, likeCount: 10, commentCount: 0, sharesCount: 5},
+        {id:3, content: 'Привет мир3', isLike: true, likeCount: 4, commentCount: 2, sharesCount: 3}
+    ],
+    newPostText: '',
+}
+
+const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             let post = {
