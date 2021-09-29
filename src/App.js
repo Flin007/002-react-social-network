@@ -3,9 +3,9 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/sidebar";
 import Profile from "./components/profile/Profile";
-import Dialogs from "./components/dialogs/Dialogs";
 import Feed from "./components/feed/Feed";
 import Friends from "./components/friends/Friends";
+import DialogsContainer from "./components/dialogs/DialogsContainer";
 
 
 function App(props) {
@@ -26,10 +26,8 @@ function App(props) {
                     <Route
                         path="/dialogs"
                         render={() =>
-                            <Dialogs
-                                state={props.state.dialogs}
-                                dispatch={props.dispatch}
-                            />}
+                            <DialogsContainer store={props.store}/>
+                        }
                     />
                     <Route path="/friends" component={Friends}/>
                 </div>

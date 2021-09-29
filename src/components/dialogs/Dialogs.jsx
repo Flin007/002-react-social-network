@@ -3,24 +3,19 @@ import s from './dialogs.module.css';
 import profile_img from './../../images/profile.jpg';
 import chatbg from './../../images/chatbg.jpg';
 import SearchInput from "../repeaters/searchinput/SearchInput";
-import DialogItem from "./DialogItem/DialogItem";
-import Message from "./Message/Message";
-import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/dialogs-reducer";
 
 const Dialogs = (props) => {
-
     //
     let messageText = React.createRef();
     let sendMessage = () =>{
-        props.dispatch(sendMessageActionCreator());
+        props.sendMessage();
     }
     let newMessageTextChange = () => {
-        props.dispatch(updateNewMessageTextActionCreator(messageText.current.value));
+
+        props.newMessgeTextChange(messageText.current.value);
     }
 
     //
-    let dialogs  = props.state.userDialogs.map( el => <DialogItem name={el.name} id={el.id}/> );
-    let messages = props.state.messages.map( m => <Message text={m.text}/>);
     return (
         <div className="pageContent">
             <div className={s.dialogsContainer}>
@@ -37,7 +32,7 @@ const Dialogs = (props) => {
                     </div>
                     <div className={s.dialogsList}>
                         <h4>Мои диалоги</h4>
-                        {dialogs}
+                        {props.dialogs}
                     </div>
                 </div>
                 <div className={s.openDialog}>
@@ -48,12 +43,12 @@ const Dialogs = (props) => {
                         </div>
                     </div>
                     <div style={{backgroundImage: `url(${chatbg})`}} className={s.dialogContent}>
-                        {messages}
+                        {props.messages}
                     </div>
                     <div className={s.openDialogFooter}>
                         <textarea
                             ref={messageText}
-                            value={props.state.newMessageText}
+                            value={props.newMessageText}
                             onChange={newMessageTextChange}
                             name=""
                             id=""

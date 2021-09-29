@@ -14,8 +14,6 @@ let renderEntireTree = (state) => {
         <React.StrictMode>
             <App
                 store={store}
-                state={state}
-                dispatch={store.dispatch}
             />
         </React.StrictMode>,
         document.getElementById('root')
