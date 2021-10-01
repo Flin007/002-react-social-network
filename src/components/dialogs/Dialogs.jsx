@@ -3,16 +3,22 @@ import s from './dialogs.module.css';
 import profile_img from './../../images/profile.jpg';
 import chatbg from './../../images/chatbg.jpg';
 import SearchInput from "../repeaters/searchinput/SearchInput";
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
 const Dialogs = (props) => {
+    //
+    let dialogs  = props.dialogs.userDialogs.map( el => <DialogItem name={el.name} id={el.id}/> );
+    let messages = props.dialogs.messages.map( m => <Message text={m.text}/>);
+
+
     //
     let messageText = React.createRef();
     let sendMessage = () =>{
         props.sendMessage();
     }
     let newMessageTextChange = () => {
-
-        props.newMessgeTextChange(messageText.current.value);
+        props.newMessageTextChange(messageText.current.value);
     }
 
     //
@@ -32,7 +38,7 @@ const Dialogs = (props) => {
                     </div>
                     <div className={s.dialogsList}>
                         <h4>Мои диалоги</h4>
-                        {props.dialogs}
+                        {dialogs}
                     </div>
                 </div>
                 <div className={s.openDialog}>
@@ -43,12 +49,12 @@ const Dialogs = (props) => {
                         </div>
                     </div>
                     <div style={{backgroundImage: `url(${chatbg})`}} className={s.dialogContent}>
-                        {props.messages}
+                        {messages}
                     </div>
                     <div className={s.openDialogFooter}>
                         <textarea
                             ref={messageText}
-                            value={props.newMessageText}
+                            value={props.dialogs.newMessageText}
                             onChange={newMessageTextChange}
                             name=""
                             id=""

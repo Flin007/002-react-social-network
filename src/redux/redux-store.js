@@ -7,5 +7,6 @@ let reducers = combineReducers({
     dialogs: dialogsReducer
 })
 
+
 let store = createStore(reducers);
 export default store;

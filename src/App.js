@@ -26,7 +26,7 @@ function App(props) {
                     <Route
                         path="/dialogs"
                         render={() =>
-                            <DialogsContainer store={props.store}/>
+                            <DialogsContainer/>
                         }
                     />
                     <Route path="/friends" component={Friends}/>

@@ -12,7 +12,8 @@ import Post from "./post/Post";
 
 
 function MyPosts(props) {
-  let posts = props.posts.map(p => <Post content={p.content} isLike={p.isLike} likeCount={p.likeCount} commentCount={p.commentCount} sharesCount={p.sharesCount} />);
+
+  let posts = props.postPage.posts.map(p => <Post content={p.content} isLike={p.isLike} likeCount={p.likeCount} commentCount={p.commentCount} sharesCount={p.sharesCount} />);
   let newPostElement = React.createRef();
 
   //Функция добавления поста из MyPostsContainer
@@ -37,7 +38,7 @@ function MyPosts(props) {
             <form action="">
               <textarea
                 ref={newPostElement}
-                value={props.currentNewPostText}
+                value={props.postPage.newPostText}
                 onChange={updateNewPostText}
                 name=""
                 id=""
