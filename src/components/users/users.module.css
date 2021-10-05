@@ -1,0 +1,56 @@
+.users_row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.user_card{
+    background: var(--iq-white);
+    flex-basis: calc(50% - 20px);
+    margin: 0 10px 15px;
+    box-shadow: 0px 0px 20px 0px rgb(44 101 144 / 10%);
+}
+.card_bg img{
+    display: block;
+    max-width: 100%;
+    border-radius: 5px;
+}
+.card_content{
+    padding: 1.5rem;
+}
+.card_content .profile_details{
+    display: flex;
+}
+.card_content .profile_details img{
+    display: inline-block;
+    margin-top: -70px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+.card_content .profile_details .profile_details__data{
+    margin-left: 50px;
+}
+.card_content .profile_details .profile_details__data h4{
+    font-size: 1.2em;
+}
+.card_content .profile_details .profile_details__data p{
+    margin: unset;
+    font-weight: 300;
+}
+
+.follow_btn{
+    margin-top: 2rem;
+    padding: .6rem 1em;
+    color: var(--white);
+    outline: unset;
+    border: unset;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--iq-primary);
+    border-color: var(--iq-primary);
+    transition: background-color .3s ease-in-out;
+}
+.follow_btn:hover{
+    background-color: var(--iq-primary-hover);
+}

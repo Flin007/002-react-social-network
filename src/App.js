@@ -6,6 +6,7 @@ import Profile from "./components/profile/Profile";
 import Feed from "./components/feed/Feed";
 import Friends from "./components/friends/Friends";
 import DialogsContainer from "./components/dialogs/DialogsContainer";
+import UsersContainer from "./components/users/UsersContainer";
 
 
 function App(props) {
@@ -19,7 +20,7 @@ function App(props) {
                     <Route
                         path="/profile"
                         render={() =>
-                            <Profile store={props.store}/>
+                            <Profile/>
                         }
                     />
                     <Route path="/feed" component={Feed}/>
@@ -30,6 +31,12 @@ function App(props) {
                         }
                     />
                     <Route path="/friends" component={Friends}/>
+                    <Route
+                        path="/users"
+                        render={() =>
+                            <UsersContainer/>
+                        }
+                    />
                 </div>
             </div>
         </BrowserRouter>

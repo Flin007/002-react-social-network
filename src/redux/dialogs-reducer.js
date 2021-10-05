@@ -12,7 +12,7 @@ let initialState = {
         {id: 6, name: 'Кирилл Кудрин'},
         {id: 7, name: 'Артур Пирожков'}
     ],
-    messages: [{text: 'Привет'}, {text: 'Как дела?'}, {text: 'Чем занимаешься?'}],
+    messages: [{id:1, text: 'Привет'}, {id:2, text: 'Как дела?'}, {id:3, text: 'Чем занимаешься?'}],
     newMessageText: ''
 }
 
@@ -22,14 +22,11 @@ const dialogsReducer = (state = initialState, action) => {
             if (state.newMessageText.length < 1){
                 return state;
             }
-            let message = {
-                text: state.newMessageText
+            return{
+                ...state,
+                messages: [...state.messages, state.newMessageText],
+                newMessageText: ''
             }
-            let stateCopy = {...state};
-            stateCopy.messages = [...state.messages]
-            stateCopy.messages.push(message);
-            stateCopy.newMessageText = '';
-            return stateCopy;
         case UPDATE_MESSAGE_TEXT:
             return {
                 ...state,
@@ -42,7 +39,6 @@ const dialogsReducer = (state = initialState, action) => {
 
 
 export const updateNewMessageTextActionCreator = (text) => {
-
     return { type:UPDATE_MESSAGE_TEXT, text };
 }
 export const sendMessageActionCreator = () => {

@@ -11,11 +11,10 @@ import './variables.css';
 import App from './App';
 
 ReactDOM.render(
-    <React.StrictMode>
+
         <Provider store={store}>
             <App/>
-        </Provider>
-    </React.StrictMode>,
+        </Provider>,
     document.getElementById('root')
 );
 

@@ -11,6 +11,7 @@ function Sidebar(){
 					<li><NavLink to="/feed" activeClassName={s.active}><span><FontAwesomeIcon icon={faNewspaper} /></span>Новости</NavLink></li>
 					<li><NavLink to="/dialogs" activeClassName={s.active}><span><FontAwesomeIcon icon={faComment} /></span>Мессенджер</NavLink></li>
 					<li><NavLink to="/friends" activeClassName={s.active}><span><FontAwesomeIcon icon={faUsers} /></span>Друзья</NavLink></li>
+					<li><NavLink to="/users" activeClassName={s.active}><span><FontAwesomeIcon icon={faUsers} /></span>Пользователи</NavLink></li>
 				</ul>
 			</nav>
 		</div>
