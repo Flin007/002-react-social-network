@@ -25,7 +25,6 @@
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, .1);
 }
 .card_content .profile_details .profile_details__data{
     margin-left: 50px;
